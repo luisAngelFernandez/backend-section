@@ -8,5 +8,6 @@ class HomeController {
     index(req, res) {
         return res.send(_homeService.index());
     }
+}
 
 module.exports = HomeController;
