@@ -8,7 +8,7 @@ const app = require(".");
 const { HomeService, UserService, IdeaService, CommentService } = require("../services");
 
 // controllers
-const {  HomeController} = require("../controllers");
+const {  HomeController, UserController, IdeaController, CommentController} = require("../controllers");
 
 // routes
 const { HomeRoutes } = require("../routes/index.routes");
@@ -33,7 +33,10 @@ container.register({
     CommentService: asClass(CommentService).singleton()
 }).register({
     // Lo llama con el bind por se un controller y por temas de alcance (scope) y el controller pueda acceder al servicio
-    HomeController: asClass(HomeController.bind(HomeController)).singleton()
+    HomeController: asClass(HomeController.bind(HomeController)).singleton(),
+    UserController: asClass(UserController.bind(UserController)).singleton(),
+    IdeaController: asClass(IdeaController.bind(IdeaController)).singleton(),
+    CommentController: asClass(CommentController.bind(CommentController)).singleton()
 }).register({
     // Aqui como asFunction porque es una función
     HomeRoutes: asFunction(HomeRoutes).singleton()
