@@ -1,4 +1,4 @@
-let _userService = null;
+let _commentService = null;
 
 class CommentController {
     constructor({CommentService}){

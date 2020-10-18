@@ -1,6 +1,6 @@
 const BaseService = require("./base.service");
 
-let _commentRepository, ideaRepository = null;
+let _commentRepository, _ideaRepository = null;
 
 class CommentService extends BaseService {
     constructor({CommentRepository, IdeaRepository}) {
